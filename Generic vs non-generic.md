@@ -4,7 +4,7 @@
 
 [Обобщенные типы и зачем они нужны](https://metanit.com/sharp/tutorial/3.12.php)
 
-В чем разница: generic and non-generic collection in C#?
+## В чем разница: generic and non-generic collection in C#?
 
 ## Generic Collection 
 
