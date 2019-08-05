@@ -64,7 +64,7 @@ public class Program
         Console.WriteLine(tempA.number1);
     }
 }
-
+```
 ## Вывод
 * **Const должны быть определены во время компиляции, а readonly могут быть определены во время выполнения программы.**
 
