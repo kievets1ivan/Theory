@@ -1,32 +1,32 @@
 # Generic vs Non-generic
 
-## Полезные ссылки
+## РџРѕР»РµР·РЅС‹Рµ СЃСЃС‹Р»РєРё
 
-[Обобщенные типы и зачем они нужны](https://metanit.com/sharp/tutorial/3.12.php)
+[РћР±РѕР±С‰РµРЅРЅС‹Рµ С‚РёРїС‹ Рё Р·Р°С‡РµРј РѕРЅРё РЅСѓР¶РЅС‹](https://metanit.com/sharp/tutorial/3.12.php)
 
-В чем разница: generic and non-generic collection in C#?
+Р’ С‡РµРј СЂР°Р·РЅРёС†Р°: generic and non-generic collection in C#?
 
 ## Generic Collection 
 
-* **Классы Generic Collection находятся в System.Collections.Generics namespace.**
+* **РљР»Р°СЃСЃС‹ Generic Collection РЅР°С…РѕРґСЏС‚СЃСЏ РІ System.Collections.Generics namespace.**
 
-* **Generic Collection строго типизирована.**
+* **Generic Collection СЃС‚СЂРѕРіРѕ С‚РёРїРёР·РёСЂРѕРІР°РЅР°.**
 
-* **Generic Collections хранят элементы внутри массивов их фактических типов.**
+* **Generic Collections С…СЂР°РЅСЏС‚ СЌР»РµРјРµРЅС‚С‹ РІРЅСѓС‚СЂРё РјР°СЃСЃРёРІРѕРІ РёС… С„Р°РєС‚РёС‡РµСЃРєРёС… С‚РёРїРѕРІ.**
 
 ## Non-Generic Collection 
 
-* **Классы Non-Generic Collection находятся в System.Collections namespace.**
+* **РљР»Р°СЃСЃС‹ Non-Generic Collection РЅР°С…РѕРґСЏС‚СЃСЏ РІ System.Collections namespace.**
 
-* **Non-Generic Collection не является строго типизирована.**
+* **Non-Generic Collection РЅРµ СЏРІР»СЏРµС‚СЃСЏ СЃС‚СЂРѕРіРѕ С‚РёРїРёР·РёСЂРѕРІР°РЅР°.**
 
-* **Non-Generic Collection хранят элементы внутри массивов объектов, в них могут храниться данные любого типа.**
+* **Non-Generic Collection С…СЂР°РЅСЏС‚ СЌР»РµРјРµРЅС‚С‹ РІРЅСѓС‚СЂРё РјР°СЃСЃРёРІРѕРІ РѕР±СЉРµРєС‚РѕРІ, РІ РЅРёС… РјРѕРіСѓС‚ С…СЂР°РЅРёС‚СЊСЃСЏ РґР°РЅРЅС‹Рµ Р»СЋР±РѕРіРѕ С‚РёРїР°.**
 
 Generic Collections:List<T>, Dictionary<TKey,TValue>, SortedList<TKey,TValue>, Hashset<T>, Queue<T>, Stack<T> 
 
 Non-Generic Collections: ArrayList, SortedList, Stack, Queue, Hashtable, BitArray
 
-Пример Generic Collection:
+РџСЂРёРјРµСЂ Generic Collection:
 
 ```csharp  
 var list = new List<int>();
@@ -38,7 +38,7 @@ list.Add(30);
 list.ForEach(i => Console.WriteLine(i));
 ```
 
-Пример Non-Generic Collection:
+РџСЂРёРјРµСЂ Non-Generic Collection:
 
 ```csharp 
 var list = new ArrayList();
@@ -50,9 +50,9 @@ list.Add(true);
 foreach(var i in list)
     Console.WriteLine(i);
 ```
-## Обобщенные методы
+## РћР±РѕР±С‰РµРЅРЅС‹Рµ РјРµС‚РѕРґС‹
 
-Пример:
+РџСЂРёРјРµСЂ:
 ```csharp
         static void Main(string[] args)
         {
@@ -78,6 +78,6 @@ foreach(var i in list)
         }
 ```
 
-## Почему лучше работать с Generic Collections?
-В случае работы с Non-Generic Collections мы сталкиваемся с такими явлениями как упаковка (boxing) и распаковка (unboxing).
-Упаковка (boxing) предполагает преобразование объекта значимого типа (например, типа int) к типу object. При упаковке общеязыковая среда CLR обертывает значение в объект типа System.Object и сохраняет его в управляемой куче (хипе). Распаковка (unboxing), наоборот, предполагает преобразование объекта типа object к значимому типу. Упаковка и распаковка ведут к снижению производительности, так как системе надо осуществить необходимые преобразования.
+## РџРѕС‡РµРјСѓ Р»СѓС‡С€Рµ СЂР°Р±РѕС‚Р°С‚СЊ СЃ Generic Collections?
+Р’ СЃР»СѓС‡Р°Рµ СЂР°Р±РѕС‚С‹ СЃ Non-Generic Collections РјС‹ СЃС‚Р°Р»РєРёРІР°РµРјСЃСЏ СЃ С‚Р°РєРёРјРё СЏРІР»РµРЅРёСЏРјРё РєР°Рє СѓРїР°РєРѕРІРєР° (boxing) Рё СЂР°СЃРїР°РєРѕРІРєР° (unboxing).
+РЈРїР°РєРѕРІРєР° (boxing) РїСЂРµРґРїРѕР»Р°РіР°РµС‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РѕР±СЉРµРєС‚Р° Р·РЅР°С‡РёРјРѕРіРѕ С‚РёРїР° (РЅР°РїСЂРёРјРµСЂ, С‚РёРїР° int) Рє С‚РёРїСѓ object. РџСЂРё СѓРїР°РєРѕРІРєРµ РѕР±С‰РµСЏР·С‹РєРѕРІР°СЏ СЃСЂРµРґР° CLR РѕР±РµСЂС‚С‹РІР°РµС‚ Р·РЅР°С‡РµРЅРёРµ РІ РѕР±СЉРµРєС‚ С‚РёРїР° System.Object Рё СЃРѕС…СЂР°РЅСЏРµС‚ РµРіРѕ РІ СѓРїСЂР°РІР»СЏРµРјРѕР№ РєСѓС‡Рµ (С…РёРїРµ). Р Р°СЃРїР°РєРѕРІРєР° (unboxing), РЅР°РѕР±РѕСЂРѕС‚, РїСЂРµРґРїРѕР»Р°РіР°РµС‚ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РѕР±СЉРµРєС‚Р° С‚РёРїР° object Рє Р·РЅР°С‡РёРјРѕРјСѓ С‚РёРїСѓ. РЈРїР°РєРѕРІРєР° Рё СЂР°СЃРїР°РєРѕРІРєР° РІРµРґСѓС‚ Рє СЃРЅРёР¶РµРЅРёСЋ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЊРЅРѕСЃС‚Рё, С‚Р°Рє РєР°Рє СЃРёСЃС‚РµРјРµ РЅР°РґРѕ РѕСЃСѓС‰РµСЃС‚РІРёС‚СЊ РЅРµРѕР±С…РѕРґРёРјС‹Рµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ.
